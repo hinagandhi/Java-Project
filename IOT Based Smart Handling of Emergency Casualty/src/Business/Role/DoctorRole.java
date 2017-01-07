@@ -1,0 +1,29 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Business.Role;
+
+import Business.Area.Area;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.DoctorOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import userinterface.Doctor.DoctorWorkAreaJPanel;
+import javax.swing.JPanel;
+
+/**
+ *
+ * @author raunak
+ */
+public class DoctorRole extends Role{
+
+
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Area area, Enterprise enterprise, EcoSystem business) {
+        return new DoctorWorkAreaJPanel(userProcessContainer, account, (DoctorOrganization)organization, enterprise); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+}
