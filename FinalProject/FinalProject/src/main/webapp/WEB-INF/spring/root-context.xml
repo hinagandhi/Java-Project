@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	 <!--<bean id="facultyDAO" class="com.hina.myapp.dao.facultyDAO"></bean> -->
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="multipartResolver"
+class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+<property name="maxUploadSize" value="100000" />
+<property name="uploadTempDir" ref="uploadDirResource" />
+</bean>
+
+<bean id="uploadDirResource" class="org.springframework.core.io.FileSystemResource">
+<constructor-arg>
+<value>C:/FacultyProfilePhotos</value>
+</constructor-arg>
+</bean>	
+<bean id="batchdao" class="com.hina.myapp.dao.batchDAO"></bean>
+<bean id="fac" class="com.hina.myapp.dao.facultyDAO"></bean>
+<bean id="facultydao" class="com.hina.myapp.dao.facultyDAO"></bean>
+<bean id="edu" class="com.hina.myapp.dao.educationDAO"></bean>
+<bean id="subjectsdao" class="com.hina.myapp.dao.SubjectsDAO"></bean>
+</beans>
